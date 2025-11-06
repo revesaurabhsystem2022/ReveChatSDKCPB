@@ -14,26 +14,29 @@ let package = Package(
         )
     ],
     dependencies: [
-        // WebRTC from GitHub
-        //.package(url: "https://github.com/stasel/WebRTC.git", branch: "latest")
     ],
     targets: [
-        // Prebuilt SDK XCFramework
+        // Remote XCFramework - ReveChatSDK
         .binaryTarget(
             name: "ReveChatSDKBinary",
-            path: "./XCFrameworks/ReveChatSDK.xcframework"
+            url: "https://github.com/revesaurabhsystem2022/ReveChatSDKCPB/releases/download/1.0.0/ReveChatSDK.xcframework.zip",
+            checksum: "5f3901ffe7fc80b43e38f6344e8259da912c5ef866e8f03fc30deff5e8facf10"
         ),
 
-        // AFNetworking XCFramework shipped with SPM
+        // Remote XCFramework - AFNetworking
         .binaryTarget(
             name: "AFNetworking",
-            path: "./XCFrameworks/AFNetworking.xcframework"
+            url: "https://github.com/revesaurabhsystem2022/ReveChatSDKCPB/releases/download/1.0.0/AFNetworking.xcframework.zip",
+            checksum: "3210d9a5508febc628bdc611766c68870a2c1211261ecfb907db5220ac459f8a"
         ),
 
+        // Remote XCFramework - WebRTC
         .binaryTarget(
             name: "WebRTC",
-            path: "./XCFrameworks/WebRTC.xcframework"
+            url: "https://github.com/revesaurabhsystem2022/ReveChatSDKCPB/releases/download/1.0.0/WebRTC.xcframework.zip",
+            checksum: "0adcbddd9339ecdbb5905ea195710319c32e9e5f0a13075fb0a0ab8ae62265e4"
         ),
+
         // Wrapper Target
         .target(
             name: "ReveChatSDK",
